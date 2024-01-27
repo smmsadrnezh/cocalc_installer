@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  cocalc:
+    container_name: cocalc
+    restart: unless-stopped
+    image: cocalc-v2-persian
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - "NOSSL=true"
+    volumes:
+      - ${DATA_DIR}:/projects
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+    ports:
+      - "${PORT}:80"
