@@ -4,7 +4,7 @@ services:
   cocalc:
     container_name: cocalc
     restart: unless-stopped
-    image: cocalc-v2-persian
+    image: cocalc-docker-persian
     build:
       context: .
       dockerfile: Dockerfile
